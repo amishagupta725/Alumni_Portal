@@ -230,6 +230,18 @@ app.get("/logout",(req,res)=>{
   res.redirect("/login");
 });
 
+
+app.post("/api/searchresult",(req,res)=>{
+  var search = req.body.search;
+  var q = 'SELECT * FROM alumni_list WHERE alumni_name = "' + search + '"' ;
+  let query = conn.query(q, (err, results) => {
+    if (err) {
+      throw err;
+    }
+    console.log(results);
+    res.render("profiles",{data: results});
+});
+});
   
 //Server listening
 app.listen(5000, () => {

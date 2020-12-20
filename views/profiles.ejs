@@ -1,10 +1,20 @@
 <link rel="stylesheet" href="../stylesheets/profiles.css">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-<div class="container">
+<link rel="stylesheet" href="../stylesheets/searchbar.css">
+<!-- Load icon library -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<!-- The form -->
+<form class="example" action="/api/searchresult" method="POST" style="margin-top: 15px; width: 500px; margin-left: 50px;">
+  <input type="text" placeholder="Enter alumni's name..." name="search">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+  
+<div class="container" style="margin-top: 40px;">
     <div class="row text-center" style="display: flex; flex-wrap: wrap;">
 <% data.forEach(function(person){ %>
-    <div class= "col-md-3 col-sm-6" style="margin-left: 10px; margin-bottom: 20px;">
+    <div class= "col-md-3 col-sm-6" style="margin-left: 10px; margin-bottom: 10px;">
 <div class="card">
     <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="John" style="width:100%">
     <h1><%= person.alumni_name %></h1>
