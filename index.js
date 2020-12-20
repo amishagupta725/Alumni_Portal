@@ -168,7 +168,7 @@ app.get("/api/users/:alumni_email",function(req,res){
   var q = 'SELECT * FROM alumni_list WHERE alumni_email = "' + req.params.alumni_email + '"' ;
   conn.query(q,function(err,results){
     console.log(results);
-    res.render("profile",{data:results[0]});
+    res.render("profile",{data:results[0], datacook:req.cookies["loggedin"]});
   });
 });
 
