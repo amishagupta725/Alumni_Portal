@@ -1,0 +1,69 @@
+<link rel = "stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Alumni Fleet</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/myprofile">My profile</a></li>
+      <li><a href="/profile/edit">Edit Profile</a></li>
+      <li><a href="/api/users">View all Profiles</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/intro"> Portal</a></li>
+      <li><a href="/events"><span></span>Events</a></li>
+      <% if (datacook =="yes") { %>
+      <li><a href="/logout"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
+      <% } else { %>
+        <li><a href="/login"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+        <% } %>
+    </ul>
+  </div>
+</nav>
+
+
+
+<!-- <%-include ("./partials/header") %> -->
+<link rel="stylesheet" href="/stylesheets/forms.css" />
+<div class="login-box" style="margin-top: 180px;"> 
+    <h2 >Edit Profile</h2>
+    <form action="/api/users/update" method="POST">
+      <div class="user-box">
+        <input type="text" name="alumni_name" value="<%=data.alumni_name%>" required>
+        <label>Name</label>
+      </div>
+      <div class="user-box">
+        <input type="email" name="alumni_email" value="<%=data.alumni_email%>" required >
+        <label>Email</label>
+      </div>
+    
+      <div class="user-box">
+        <input type="tel" name="alumni_phone" value="<%=data.alumni_phone%>" required pattern="[0-9]{10}"> 
+        <label>Phone Number</label>
+      </div>
+      <div class="user-box">
+        <input type="text" name="college" value="<%=data.college%>" required>
+        <label>College</label>
+      </div>
+      <div class="user-box">
+        <input type="text" name="degree" value="<%=data.degree%>" required>
+        <label>Degree</label>
+      </div>
+      <div class="user-box">
+        <input type="text" name="company" value="<%=data.company%>" required>
+        <label>Company</label>
+      </div>
+
+  
+      <!-- <a href="/intro"></a> -->
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <button style="margin-top:20px;text-align:center;padding:10px 10px;border: none; background: black; font-size: large; font-weight: bold; color: white;" type="submit">Update</button>
+        <!-- <a href="/intro">Register</a> -->
+      <!-- </a> -->
+    </form>
+  </div>

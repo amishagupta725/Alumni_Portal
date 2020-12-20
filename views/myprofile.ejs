@@ -1,0 +1,49 @@
+<link rel = "stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Alumni Fleet</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/myprofile">My profile</a></li>
+      <li><a href="/profile/edit">Edit Profile</a></li>
+      <li><a href="/api/users">View all Profiles</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/intro"> Portal</a></li>
+      <li><a href="/events"><span></span>Events</a></li>
+      <% if (datacook == "yes") { %>
+      <li><a href="/logout"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
+      <% } else { %>
+        <li><a href="/login"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+        <% } %>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container" style="margin-left:25%; font-family: 'Raleway';" >
+    <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+    <div class= "col-md-3 col-sm-6" style="margin-left: 10px; margin-bottom: 20px;">
+<div class="card" data-aos="fade-up" data-aos-offset="200"data-aos-delay="70"  data-aos-duration="2000"
+style="width: 600px; margin-top: 20px;position: absolute;top:0;bottom: 0;left: 0;right: 0; margin: auto; margin-top: 20px;">
+    <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="John" style="width:100%">
+    <h1 style="text-align: center;"><%= data.alumni_name %></h1>
+    <p class="title" style="text-align: justify; font-size: larger;"><span style="font-weight: bold; font-size: larger;">Contact Me:  </span> <%= data.alumni_email %></p>
+    <p style="text-align: justify; font-size: larger;"><span style="font-weight: bold;font-size: larger;">College:  </span><%= data.college %></p>
+    <p class="title" style="text-align: justify;font-size: larger;"><span style="font-weight: bold;font-size: larger; ">Company: </span> <%= data.company %></p>
+    <a href="#"><i class="fa fa-dribbble" style="font-size: x-large; margin-left: 20px;"></i></a>
+    <a href="#"><i class="fa fa-twitter" style="font-size: x-large; margin-left: 20px;"></i></a>
+    <a href="#"><i class="fa fa-linkedin" style="font-size: x-large; margin-left: 20px;"></i></a>
+    <a href="#"><i class="fa fa-facebook" style="font-size: x-large; margin-left: 20px;"></i></a>
+  </div>
+</div>
+<div class="col-md-1"></div>
+</div>
+</div>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
